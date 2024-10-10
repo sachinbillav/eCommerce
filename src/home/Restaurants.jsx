@@ -3,8 +3,9 @@ import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 
 function Restaurants(props) {
-    console.log(props)
-    const { code, name, location, type, opensAt, closesAt, RestaurantImage,domain } = props;
+    
+    const { code, name, location, type, opensAt, closesAt, RestaurantImage,domain, ratings } = props;
+    console.log("ratings",ratings)
     return (
         <div className="card">
             <img src={`${domain}/media/${RestaurantImage}`} />
@@ -14,7 +15,7 @@ function Restaurants(props) {
                         <td><h4 className="card-title">{name}</h4></td>
                         <td>
                             <Box className="custom-box" component="fieldset" mb={3} borderColor="transparent">
-                                <Rating name="read-only" value='3' readOnly  sx={{ fontSize: '0.9rem' }}/>
+                                <Rating name="read-only" value={ratings} readOnly  sx={{ fontSize: '0.9rem' }}/>
                             </Box>
                         </td>
                     </tr>

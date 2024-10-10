@@ -34,7 +34,7 @@ function RestaurantsList({sendDataToChild}) {
     const scroll = (scrollOffset) => {
         scrollRef.current.scrollLeft += scrollOffset;
     };
-    console.log(data)
+    console.log("console data",data)
     const displayedRestaurants = [];
     //segregating data based on food type
     let typeNeeded = false
@@ -64,6 +64,7 @@ function RestaurantsList({sendDataToChild}) {
                         closesAt = {item.closesAt}
                         RestaurantImage = {item.RestaurantImage}
                         domain = {requestUrl}
+                        ratings = {item.rating}
                         
                     />
                 ))}
